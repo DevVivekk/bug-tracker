@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc -p tsconfig.server.json && node dist/server.js",
     "build": "next build && tsc -p tsconfig.server.json",
-    "start": "NODE_ENV=production node dist/mains.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "lint": "next lint"
   },
   "dependencies": {
