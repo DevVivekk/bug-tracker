@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",                 
+    "module": "ESNext",                
+    "lib": ["esnext"],              
+    "allowJs": false,                   
+    "skipLibCheck": true,
+    "strict": true,                    
+    "esModuleInterop": true,             
+    "moduleResolution": "node",          
+    "resolveJsonModule": true,        
+    "noEmit": false,                   
+    "outDir": "dist",                  
+    "rootDir": "server",                
+    "sourceMap": true,                  
+    "incremental": true,               
+    "typeRoots": ["node_modules/@types","server/types"]
+  },
+  "include": ["server/**/*"],           
+  "exclude": ["node_modules", "dist", "server/**/*.test.ts"] 
+}
+
+//server configuration typescript

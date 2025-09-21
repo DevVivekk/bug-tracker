@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Intersift Server
+
+This project uses a **Node.js server** to run a custom Next.js application and provides a RESTful API for user, bug reporter, and admin functionalities.
+
+## Project Structure
+
+### 1. Models (`server/model/`)
+Models define the data structure for MongoDB collections using Mongoose.
+
+- **`user.ts`**: Defines the user schema (email, username, password, role).
+- **`bugs.ts`**: Defines the bug schema (title, description, severity, createdBy, etc.).
+
+### 2. Controllers (`server/controller/`)
+Controllers contain the business logic for handling requests.
+
+- **`userController/usersetup.ts`**: Handles user signup, login, and user info retrieval.
+- **`reporterController/resporter.ts`**: Handles bug submission, updating, and fetching bugs for reporters.
+- **`adminController/admin.ts`**: Handles admin actions like viewing and updating all bugs.
+
+### 3. Routes (`server/router/`)
+Routes define the API endpoints and connect them to controllers.
+
+- **`userRoutes.ts`**: Endpoints for user signup, login, and info (`/server/api/v1/user`).
+- **`reporterRoutes.ts`**: Endpoints for reporters to submit and view bugs (`/server/api/v1/reporter`).
+- **`adminRoutes.ts`**: Endpoints for admin bug management (`/server/api/v1/admin`).
+
+## How It Works
+
+- The **Node.js server** (see [`server/server.ts`](server/server.ts)) runs Next.js and exposes API endpoints for user, reporter, and admin operations.
+- All API requests are handled by Express and routed to the appropriate controller.
+- MongoDB is used for data storage via Mongoose models.
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```sh
+   npm install
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. Start thr App:
+  ```sh
+  npm run dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Build the App:
+  ```sh
+  npm run build  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Note
+- Create .env and .env.local file. In the env file mentio MONGO_URL and PORT and in the env local file mention NEXT_PUBLIC_URL as http://localhost:3000 where the port should be same.  
