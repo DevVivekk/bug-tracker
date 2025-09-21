@@ -33,16 +33,20 @@ Routes define the API endpoints and connect them to controllers.
 ## Getting Started
 
 1. Install dependencies:
-   ```sh
-   npm install
-
-2. Start thr App:
-  ```sh
-  npm run dev
-
+    ```sh
+    npm install
+    ```
+2. Start the App:
+    ```sh
+    npm run dev
+    ```
 3. Build the App:
-  ```sh
-  npm run build  
+    ```sh
+    npm run build
+    ```
 
 ## Note
-- Create .env and .env.local file. In the env file mentio MONGO_URL and PORT and in the env local file mention NEXT_PUBLIC_URL as http://localhost:3000 where the port should be same.  
+
+- Create `.env` and `.env.local` files.
+- In the `.env` file, mention `MONGO_URL` and `PORT`.
+- In the `.env.local` file, mention `NEXT_PUBLIC_URL` as `http://localhost:3000` (the port should match your server port).
